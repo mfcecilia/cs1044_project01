@@ -15,13 +15,13 @@ string replayValue;
 std::string result;
 
 
-
+//the main events happen here in this function
 void play()
 {
     cout << "Enter a number: " << endl;
     cin >> number;
 
-    //this converts the input to an integer to be used in a loop
+    //this converts the use input to an integer to be used for the main if/else statements
     istringstream buffer(number);
     int value;
     buffer >> value;
@@ -44,11 +44,15 @@ void play()
 
 
     }
+
+    //odd numbers are handled here
     else if (value % 2 == 1)
     {
         cout << "Number is odd, doubling each digit in the integer..." << endl;
+        //this for loop grabs the digits of the input
         for (int i = 0; i < number.size(); i++)
         {
+            //this for loop duplicates those digits
             for (int j = 0; j < 2; j++)
             {
                 result += number.at(i);
@@ -56,12 +60,15 @@ void play()
 
         }
         cout << result << endl;
+        //this clears the contents of the result variable to make room for a new input
         result.clear();
     }
     cout << "Would you like to enter another integer (y/n): " << endl;
     cin >> replayValue;
 }
 
+//runs when the user wants to play again
+//handles the stopping and/or continuing the program
 void replay()
 {
     while (replayValue == "y")
@@ -76,25 +83,10 @@ void replay()
 }
 
 
-
+//main method
 int main()
 {
     play();
     replay();
 }
 
-// On my honor:
-//
-// - I have not discussed the C++ language code in my program with
-// anyone other than my instructor or the teaching assistants
-// assigned to this course.
-//
-// - I have not used C++ language code obtained from another student,
-// or any other unauthorized source, either modified or unmodified.
-//
-// - If any C++ language code or documentation used in my program
-// was obtained from an allowed source, such as a text book or course
-// notes, that has been clearly noted with a proper citation in
-// the comments of my program.
-//
-// <Student Name>
