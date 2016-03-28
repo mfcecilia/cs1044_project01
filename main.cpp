@@ -47,7 +47,16 @@ void play()
     else if (value % 2 == 1)
     {
         cout << "Number is odd, doubling each digit in the integer..." << endl;
-        cout << "Result: " << value << value <<endl;
+        for (int i = 0; i < number.size(); i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                result += number.at(i);
+            }
+
+        }
+        cout << result << endl;
+        result.clear();
     }
     cout << "Would you like to enter another integer (y/n): " << endl;
     cin >> replayValue;
