@@ -2,20 +2,26 @@
 #include <sstream>
 #include <cmath>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
+
+//the string variable number is the user input as a string
 std::string number;
 string replayValue;
-int result = 0;
+
+//the result string will print the final value as a string
+std::string result;
 
 
 
 void play()
 {
-    cout << "Enter a number: ";
+    cout << "Enter a number: " << endl;
     cin >> number;
 
+    //this converts the input to an integer to be used in a loop
     istringstream buffer(number);
     int value;
     buffer >> value;
@@ -23,23 +29,26 @@ void play()
 
     if (value % 2 == 0)
     {
-        cout << "Number is even, tripling each digit in the integer...";
+        cout << "Number is even, tripling each digit in the integer..." << endl;
 
         for (int i = 0; i < number.size(); i++)
         {
             for (int j = 0; j < 3; j++)
             {
-                result = result+i;
+                result += number.at(i);
             }
+
         }
-        cout << "Result: " << result << endl;
+        cout << result << endl;
+
+
     }
     else if (value % 2 == 1)
     {
-        cout << "Number is odd, doubling each digit in the integer...";
+        cout << "Number is odd, doubling each digit in the integer..." << endl;
         cout << "Result: " << value << value <<endl;
     }
-    cout << "Would you like to enter another integer (y/n): ";
+    cout << "Would you like to enter another integer (y/n): " << endl;
     cin >> replayValue;
 }
 
@@ -55,9 +64,6 @@ void replay()
         }
     }
 }
-
-
-
 
 
 
