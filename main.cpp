@@ -40,6 +40,7 @@ void play()
 
         }
         cout << result << endl;
+        result.clear();
 
 
     }
